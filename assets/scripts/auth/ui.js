@@ -20,7 +20,7 @@ const signUpFailure = function(error) {
 const signInSuccess = function(response) {
   // $('.unauthenticated').hide()
   $('#message').text('Welcome to the page!')
-  console.log(response.user)
+  // console.log(response.user)
   store.user = response.user
   $('.unauthenticated').hide()
   // show the authenticated options

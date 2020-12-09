@@ -8,13 +8,23 @@ const getFormFields = require('./../../../lib/get-form-fields')
 const onCreateGame = function(event) {
   event.preventDefault()
 
-  // const data = getFormFields(event.target)
-
   api.createGame()
     .then(ui.createGameSuccess)
     .catch(ui.createGameFailure)
 }
 
+const onPlayTurn = function(event) {
+  event.preventDefault()
+
+  const form = event.target
+  const data = getFormFields(form)
+  api.playTurn(data)
+    .then(ui.playTurn)
+    .catch(ui.playTurnFailed)
+}
+
+
 module.exports = {
-  onCreateGame
+  onCreateGame,
+  onPlayTurn
 }

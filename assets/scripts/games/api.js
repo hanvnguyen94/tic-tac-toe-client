@@ -14,6 +14,24 @@ const createGame = function(data) {
   })
 }
 
+const updateGame = function(data) {
+  return $.ajax({
+      url: config.apiUrl + '/games' + store.game._id,
+      method: 'PATCH',
+      headers: {
+        Authorization: 'Bearer ' + store.user.token
+      },
+      data: '{
+      "game": {
+        "cell": {
+          "index":
+        }
+      }
+    }
+    '
+  })
+}
+
 module.exports = {
   createGame
 }

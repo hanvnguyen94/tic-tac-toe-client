@@ -1,1 +1,30 @@
 @import '~bootstrap/scss/bootstrap';
+
+.authenticated,
+.unauthenticated,
+h1,
+h3 {
+  text-align: center;
+  padding: 5px;
+}
+
+#sign-in {
+  padding-top: 10px;
+}
+
+.board {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.row {
+  width: 30%;
+}
+
+.col-4 {
+  border: 1px solid black;
+  padding-top: 33.3%;
+  // flex: 0 0 33.33333%;
+  width: 33.33333%;
+}

@@ -14,23 +14,53 @@ const createGameSuccess = function(response) {
   // create a new key on the `store` object
   // give that key a value of `response.game`
   store.game = response.game
-  console.log(store.game)
-  // const gameHtml = `
-  // <h3>${response.game}</h3>
-  // `
-  //
-  // $('#game-display').html(gameHtml)
-  // $('#board').html()
+  console.log(store)
 
-
-
+  let gameHtml = `
+  <h3>You are X</h3>`
+  $('#player-display').html(gameHtml)
 }
+
 
 const createGameFailure = function(error) {
   $('#message').text('Game create failed ' + error.responseJSON.message)
 }
 
+// check if user click on empty spot
+const playTurn = function(event) {
+  let cells = [
+    "", "", "",
+    "", "", "",
+    "", "", "",
+  ]
+  let currentPlayer = "X"
+  const boardPosition = event.target.id
+  console.log(boardPosition)
+  // check if user click on empty spot
+  // display current move on the board
+  if ($(this).text() === "") {
+    $(this).append(currentPlayer)
+    // // add token to board and cells
+    // store.user.token = response.user.token
+    // console.log(store.user.token)
+  } else {
+    $('#player-display').html('Invalid Space')
+  }
+
+}
+
+const playTurnFailed = function(error) {
+  $('#player-display').text('Game create failed ' + error.responseJSON.message)
+}
+
+const restartGame = function(event) {
+  $('.box').empty()
+}
+
 module.exports = {
   createGameSuccess,
-  createGameFailure
+  createGameFailure,
+  playTurn,
+  playTurnFailed,
+  restartGame
 }
