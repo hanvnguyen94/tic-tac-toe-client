@@ -16,19 +16,20 @@ const createGame = function(data) {
 
 const updateGame = function(data) {
   return $.ajax({
-      url: config.apiUrl + '/games' + store.game._id,
-      method: 'PATCH',
-      headers: {
-        Authorization: 'Bearer ' + store.user.token
-      },
-      data: '{
+    url: config.apiUrl + '/games' + store.user._id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: {
       "game": {
         "cell": {
-          "index":
-        }
+          "index": 0,
+          "value": X
+        },
+        "over": false
       }
     }
-    '
   })
 }
 
