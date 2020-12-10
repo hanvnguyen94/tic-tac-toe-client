@@ -21,7 +21,6 @@ const onPlayTurn = function(event) {
 
   let currentPlayer = "x"
   const boardPosition = event.target.id
-  console.log(boardPosition)
   // check if user click on empty spot
   // display current move on the board
   if ($(this).text() === "") {
@@ -35,7 +34,7 @@ const onPlayTurn = function(event) {
     $('#player-display').html('Invalid Space')
   }
 
-  api.updateGame(data)
+  api.updateGame(boardPosition, currentPlayer)
     .then(ui.playTurnSuccess)
     .catch(ui.playTurnFailed)
 }

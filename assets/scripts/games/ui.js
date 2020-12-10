@@ -19,6 +19,7 @@ const createGameSuccess = function(response) {
   let gameHtml = `
   <h3>You are X</h3>`
   $('#player-display').html(gameHtml)
+  // create the box
   $('.box').empty()
 }
 
@@ -28,8 +29,8 @@ const createGameFailure = function(error) {
 }
 
 const playTurnSuccess = function(response) {
-  console.log(response)
   store.game = response.game
+  console.log(store)
 }
 
 const playTurnFailed = function(error) {
