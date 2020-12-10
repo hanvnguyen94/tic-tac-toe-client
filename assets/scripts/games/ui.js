@@ -17,7 +17,7 @@ const createGameSuccess = function(response) {
   console.log(store)
 
   let gameHtml = `
-  <h3>You are X</h3>`
+  <h3>Turn Starts as X</h3>`
   $('#player-display').html(gameHtml)
   // create the box
   $('.box').empty()
@@ -29,12 +29,14 @@ const createGameFailure = function(error) {
 }
 
 const playTurnSuccess = function(response) {
+  // add token to board and cells
+  // game obj from api has owner(token) and cells
   store.game = response.game
-  console.log(store)
+
 }
 
 const playTurnFailed = function(error) {
-  $('#player-display').text('Game create failed ' + error.responseJSON.message)
+  $('#player-display').text('Can not choose that spot ' + error.responseJSON.message)
 }
 
 const restartGame = function(event) {
