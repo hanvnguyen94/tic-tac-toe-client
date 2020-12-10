@@ -18,10 +18,28 @@ const onPlayTurn = function(event) {
 
   const form = event.target
   const data = getFormFields(form)
-  api.playTurn(data)
-    .then(ui.playTurn)
+
+  let currentPlayer = "x"
+  const boardPosition = event.target.id
+  console.log(boardPosition)
+  // check if user click on empty spot
+  // display current move on the board
+  if ($(this).text() === "") {
+    $(this).append(currentPlayer)
+    // // add token to board and cells
+    // store.user.token = response.user.token
+    // console.log(store.user.token)
+    // store.user = response.user
+
+  } else {
+    $('#player-display').html('Invalid Space')
+  }
+
+  api.updateGame(data)
+    .then(ui.playTurnSuccess)
     .catch(ui.playTurnFailed)
 }
+
 
 
 module.exports = {

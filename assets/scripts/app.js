@@ -19,6 +19,7 @@ $(() => {
   // start new game
   $('#start-game').on('click', gameEvents.onCreateGame)
 
-  $('.box').on('click', ui.playTurn)
+  // $('.box').on('click', ui.playTurn)
+  $('.box').on('click', gameEvents.onPlayTurn)
   $('#restart-game').on('click', ui.restartGame)
 })

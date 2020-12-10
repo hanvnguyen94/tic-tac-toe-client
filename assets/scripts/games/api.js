@@ -15,8 +15,9 @@ const createGame = function(data) {
 }
 
 const updateGame = function(data) {
+  console.log(store)
   return $.ajax({
-    url: config.apiUrl + '/games' + store.user._id,
+    url: config.apiUrl + '/games/' + store.game._id,
     method: 'PATCH',
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -25,7 +26,7 @@ const updateGame = function(data) {
       "game": {
         "cell": {
           "index": 0,
-          "value": X
+          "value": 'x'
         },
         "over": false
       }
@@ -34,5 +35,6 @@ const updateGame = function(data) {
 }
 
 module.exports = {
-  createGame
+  createGame,
+  updateGame
 }
