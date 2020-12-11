@@ -7,7 +7,7 @@ const createGame = function(data) {
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'POST',
-    // data: data,
+    // data: {},
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },

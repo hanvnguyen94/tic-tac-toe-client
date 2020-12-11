@@ -1,6 +1,8 @@
 'use strict'
 
 const store = require('./../store')
+const gameEvents = require('./events')
+
 
 const createGameSuccess = function(response) {
   // console.log(response.game)
