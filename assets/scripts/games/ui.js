@@ -14,7 +14,7 @@ const createGameSuccess = function(response) {
   // create a new key on the `store` object
   // give that key a value of `response.game`
   store.game = response.game
-  console.log(store)
+
 
   let gameHtml = `
   <h3>Turn Starts as X</h3>`
@@ -32,7 +32,9 @@ const playTurnSuccess = function(response) {
   // add token to board and cells
   // game obj from api has owner(token) and cells
   store.game = response.game
-
+  let gameArray = store.game.cells
+  console.log(gameArray)
+  // function check winner go in here
 }
 
 const playTurnFailed = function(error) {

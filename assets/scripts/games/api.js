@@ -14,7 +14,7 @@ const createGame = function(data) {
   })
 }
 
-const updateGame = function(cellIndex, playerX) {
+const updateGame = function(cellIndex, currentPlayer) {
   return $.ajax({
     url: config.apiUrl + '/games/' + store.game._id,
     method: 'PATCH',
@@ -25,7 +25,7 @@ const updateGame = function(cellIndex, playerX) {
       "game": {
         "cell": {
           "index": cellIndex,
-          "value": playerX
+          "value": currentPlayer
         },
         "over": false
       }
