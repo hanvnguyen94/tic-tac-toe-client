@@ -68,7 +68,6 @@ const onPlayTurn = function(event) {
     api.updateGame(boardPosition, currentPlayer)
       .then(ui.playTurnSuccess)
       .catch(ui.playTurnFailed)
-
     // switch x to o
     switchPlayers()
   } else {
@@ -76,8 +75,6 @@ const onPlayTurn = function(event) {
   }
 
 }
-
-
 
 module.exports = {
   onCreateGame,
