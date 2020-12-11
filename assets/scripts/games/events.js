@@ -53,15 +53,15 @@ const onPlayTurn = function(event) {
   const gameArray = store.game.cells
 
   function switchPlayers() {
-    if (currentPlayer === "x") {
-      currentPlayer = "o"
+    if (currentPlayer === 'x') {
+      currentPlayer = 'o'
     } else {
-      currentPlayer = "x"
+      currentPlayer = 'x'
     }
   }
 
   // console.log(event.target.innerHTML)
-  if ($(event.target).text() === "") {
+  if ($(event.target).text() === '') {
     console.log(currentPlayer)
     $(event.target).text(currentPlayer)
     $('#player-display').text(currentPlayer + "'s turn")
@@ -73,7 +73,6 @@ const onPlayTurn = function(event) {
   } else {
     $('#player-display').text('You must choose a valid space')
   }
-
 }
 
 module.exports = {

@@ -25,7 +25,7 @@ const updateGame = function(cellIndex, currentValue) {
       "game": {
         "cell": {
           "index": cellIndex,
-          "value": currentPlayer
+          "value": currentValue
         },
         "over": false
       }
