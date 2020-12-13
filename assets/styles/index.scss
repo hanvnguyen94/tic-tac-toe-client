@@ -1,11 +1,16 @@
 @import '~bootstrap/scss/bootstrap';
 
+#message,
 .authenticated,
 .unauthenticated,
 h1,
 h3 {
   text-align: center;
   padding: 5px;
+}
+
+#message {
+  font-size: 25px;
 }
 
 #sign-in {

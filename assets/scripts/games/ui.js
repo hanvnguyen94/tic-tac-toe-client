@@ -4,24 +4,27 @@ const store = require('./../store')
 
 
 const createGameSuccess = function(response) {
-  // console.log(response.game)
+  console.log(response.game)
   $('.unauthenticated').hide()
   $('#change-password').hide()
   // show the authenticated options
   $('.authenticated').show()
   $('#message').text('New Game Created')
-  // save API response
   //  'store' the game
-  // create a new key on the `store` object
-  // give that key a value of `response.game`
   store.game = response.game
+
+  //display the board
   $('.board').show()
 
-  let gameHtml = `
-  <h3>Turn Starts as X</h3>`
-  $('#player-display').html(gameHtml)
-  // create the box
+
+  const gameMessage = (`
+    <h3>Game Starts At X</h3>`)
+
+  $('#message').html(gameMessage)
+
+  // clear the board
   $('.box').empty()
+
 }
 
 
@@ -48,5 +51,4 @@ module.exports = {
   createGameFailure,
   playTurnSuccess,
   playTurnFailed,
-
 }

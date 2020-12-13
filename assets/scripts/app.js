@@ -18,9 +18,8 @@ $(() => {
   $('#sign-out').on('click', authEvents.onSignOut)
 
   // start new game
+  $('.box').on('click', gameEvents.onPlayTurn)
+
   $('#start-game').on('click', gameEvents.onCreateGame)
 
-  // $('.box').on('click', ui.playTurn)
-  $('.box').on('click', gameEvents.onPlayTurn)
-  $('#restart-game').on('click', ui.restartGame)
 })
