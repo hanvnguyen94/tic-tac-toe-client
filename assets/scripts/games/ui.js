@@ -1,7 +1,6 @@
 'use strict'
 
 const store = require('./../store')
-const gameEvents = require('./events')
 
 
 const createGameSuccess = function(response) {
@@ -16,7 +15,7 @@ const createGameSuccess = function(response) {
   // create a new key on the `store` object
   // give that key a value of `response.game`
   store.game = response.game
-
+  $('.board').show()
 
   let gameHtml = `
   <h3>Turn Starts as X</h3>`
@@ -43,15 +42,11 @@ const playTurnFailed = function(error) {
   $('#player-display').text('Can not choose that spot ' + error.responseJSON.message)
 }
 
-const restartGame = function(event) {
-  $('.box').empty()
-  $('#player-display').html()
-}
 
 module.exports = {
   createGameSuccess,
   createGameFailure,
   playTurnSuccess,
   playTurnFailed,
-  restartGame
+
 }

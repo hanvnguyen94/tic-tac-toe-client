@@ -11,6 +11,7 @@ const ui = require('./games/ui')
 
 $(() => {
   // your JS code goes here
+  $('.board').hide()
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
