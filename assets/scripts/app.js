@@ -22,4 +22,6 @@ $(() => {
 
   $('#start-game').on('click', gameEvents.onCreateGame)
 
+  // show games that played
+  $('#add-games').on('click', gameEvents.onShowGames)
 })

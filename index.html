@@ -14,49 +14,51 @@
 </head>
 
 <body>
-  <h1>Amazing Retro Tic-Tac-Toe</h1>
+  <h1>Retro Tic-Tac-Toe</h1>
   <p id="message"></p>
   <div class="unauthenticated">
     <form id="sign-up">
-      <input type="text" name="credentials[email]" placeholder="Enter email here">
-      <input type="password" name="credentials[password]" placeholder="Enter password here">
-      <input type="password" name="credentials[password_confirmation]" placeholder="Confirm password">
+      <input type="text" name="credentials[email]" placeholder="Enter email here" required>
+      <input type="password" name="credentials[password]" placeholder="Enter password here" required>
+      <input type="password" name="credentials[password_confirmation]" placeholder="Confirm password" required>
       <button type="submit">Sign Up</button>
     </form>
 
     <form id="sign-in">
-      <input type="text" name="credentials[email]" placeholder="Enter email here">
-      <input type="password" name="credentials[password]" placeholder="Enter password here">
+      <input type="text" name="credentials[email]" placeholder="Enter email here" required>
+      <input type="password" name="credentials[password]" placeholder="Enter password here" required>
       <button type="submit">Sign In</button>
     </form>
   </div>
   <div class="authenticated">
     <form id="change-password">
-      <input type="password" name="passwords[old]" placeholder="Old Password">
-      <input type="password" name="passwords[new]" placeholder="New Password">
+      <input type="password" name="passwords[old]" placeholder="Old Password" required>
+      <input type="password" name="passwords[new]" placeholder="New Password" required>
       <button type="submit">Change Password</button>
+      <button id="sign-out" type="submit">Sign Out</button>
     </form>
-    <button id="sign-out" type="submit">Sign Out</button>
+
     <br>
 
-    <button id="start-game" type="submit">START A NEW GAME</button>
-
-  </div>
-  <!-- remember to put board back to authenticated div -->
-  <p id="player-display"></p>
-  <div class="board">
-    <div class="row">
-      <div id="0" class="box col-4" data-cell-index="0"></div>
-      <div id="1" class="box col-4" data-cell-index="1"></div>
-      <div id="2" class="box col-4" data-cell-index="2"></div>
-      <div id="3" class="box col-4" data-cell-index="3"></div>
-      <div id="4" class="box col-4" data-cell-index="4"></div>
-      <div id="5" class="box col-4" data-cell-index="5"></div>
-      <div id="6" class="box col-4" data-cell-index="6"></div>
-      <div id="7" class="box col-4" data-cell-index="7"></div>
-      <div id="8" class="box col-4" data-cell-index="8"></div>
+    <button class="btn btn-success" id="start-game" type="submit">START A NEW GAME</button>
+    <button class="btn btn-success" id="add-games" type="submit">ADD GAMES</button>
+    <p id="player-display"></p>
+    <div class="container" style="display:none">
+      <div class="row">
+        <div id="0" class="box col-4 atl-color" data-cell-index="0"></div>
+        <div id="1" class="box col-4 col-lg-4 atl-color" data-cell-index="1"></div>
+        <div id="2" class="box col-4 col-lg-4 atl-color" data-cell-index="2"></div>
+        <div id="3" class="box col-4 col-lg-4 atl-color" data-cell-index="3"></div>
+        <div id="4" class="box col-4 col-lg-4 atl-color" data-cell-index="4"></div>
+        <div id="5" class="box col-4 col-lg-4 atl-color" data-cell-index="5"></div>
+        <div id="6" class="box col-4 col-lg-4 atl-color" data-cell-index="6"></div>
+        <div id="7" class="box col-4 col-lg-4 atl-color" data-cell-index="7"></div>
+        <div id="8" class="box col-4 col-lg-4 atl-color" data-cell-index="8"></div>
+      </div>
     </div>
+    <div id="games-display"></div>
   </div>
+
 </body>
 
 </html>

@@ -9,6 +9,7 @@ $('.authenticated').hide()
 // will pass this function a response object from the API
 const signUpSuccess = function(response) {
   $('#message').text('Sign Up Successfully!')
+  $('form').trigger('reset')
 }
 
 // the ajax function's .catch
