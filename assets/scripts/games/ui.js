@@ -44,7 +44,7 @@ const showGamesSuccess = function(response) {
   const games = response.games
   const gamesHTML = (`
   <div class="total-games">
-    <h4>Total games user ${store.user.email} have played: ${games.length}</h4>
+    <h4>Total games user ${store.user.email} have played: ${games.length} games</h4>
   </div>`)
   $('#games-display').html(gamesHTML)
 }

@@ -14,7 +14,7 @@ const onCreateGame = function(event) {
   gameOver = false
   // make sure first starts as X
   turnCount = 0
-  // found on stack over flow
+  // found on stack over flow, enable all the click events
   $('.box').css('pointer-events', 'auto')
   $('.container').show()
   $('#games-display').empty()
@@ -26,8 +26,6 @@ const onCreateGame = function(event) {
 }
 
 // Game starts here
-// function starts when click on any boxes
-
 let currentPlayer = 'X'
 let gameArray = ["", "", "", "", "", "", "", "", ""]
 let gameOver = false
@@ -53,14 +51,14 @@ const onPlayTurn = function(event) {
   // switch players here
   playerTurn()
 
-
+  // function starts when click on any empty boxes
   if ($(event.target).text().length === 0) {
 
     $(event.target).text(currentPlayer)
     const currentValue = $(event.target).text()
     const userMove = 'Valid move'
     let cellClick = $(event.target).html()
-
+    // asign the current player to game array
     gameArray[cellIndex] = currentValue
 
     // check winner here
@@ -68,6 +66,7 @@ const onPlayTurn = function(event) {
       if (gameArray[cellIndex] === gameArray[0] && gameArray[cellIndex] === gameArray[1] && gameArray[cellIndex] === gameArray[2]) {
         $('#message').text(`${currentValue} is the winner!`)
         gameOver = true
+        // disable all the click after determined winner
         $('.box').css('pointer-events', 'none') // => stack over flow saved my life
       } else if (
         gameArray[cellIndex] === gameArray[3] && gameArray[cellIndex] === gameArray[4] && gameArray[cellIndex] === gameArray[5]
@@ -112,6 +111,7 @@ const onPlayTurn = function(event) {
         gameOver = true
         $('.box').css('pointer-events', 'none')
       }
+      // check if there is no more empty boxes and game has no winner
       let gameDraw = !gameArray.includes('')
       if (gameDraw) {
         $('#message').text('Game has ended tie!')
@@ -123,7 +123,7 @@ const onPlayTurn = function(event) {
     }
 
     checkWinner(gameArray)
-
+    // update API when we found a winner
     api.updateGame(cellIndex, currentValue, gameOver)
       .then(ui.playTurnSuccess)
       .catch(ui.playTurnFailed)

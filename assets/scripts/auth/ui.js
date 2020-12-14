@@ -19,10 +19,9 @@ const signUpFailure = function(error) {
 }
 
 const signInSuccess = function(response) {
-  // $('.unauthenticated').hide()
-  $('#message').text('Welcome to the page!')
-  // console.log(response.user)
+  // save user information to use later on
   store.user = response.user
+  $('#message').text(`Welcome user ${store.user.email} to the page!`)
   $('.unauthenticated').hide()
   // show the authenticated options
   $('.authenticated').show()
