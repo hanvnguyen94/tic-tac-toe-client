@@ -14,7 +14,7 @@ const createGame = function(data) {
   })
 }
 
-const updateGame = function(cellIndex, currentValue) {
+const updateGame = function(cellIndex, currentValue, gameOver) {
   return $.ajax({
     url: config.apiUrl + '/games/' + store.game._id,
     method: 'PATCH',
@@ -22,13 +22,13 @@ const updateGame = function(cellIndex, currentValue) {
       Authorization: 'Bearer ' + store.user.token
     },
     data: {
-      game: {
-        cell: {
-          index: cellIndex,
+      "game": {
+        "cell": {
+          "index": cellIndex,
           //currentValue
-          value: currentValue
+          "value": currentValue
         },
-        over: false
+        "over": gameOver
       }
     }
   })

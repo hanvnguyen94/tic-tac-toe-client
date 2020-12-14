@@ -4,7 +4,6 @@ const api = require('./api')
 const ui = require('./ui')
 const store = require('./../store')
 
-
 const getFormFields = require('./../../../lib/get-form-fields')
 
 const onCreateGame = function(event) {
@@ -15,6 +14,8 @@ const onCreateGame = function(event) {
   gameOver = false
   // make sure first starts as X
   turnCount = 0
+
+  $('.box').css('pointer-events', 'auto')
 
   api.createGame()
     .then(ui.createGameSuccess)
@@ -65,37 +66,52 @@ const onPlayTurn = function(event) {
 
     // check winner here
     function checkWinner() {
-      // check if the board is full
       if (gameArray[cellIndex] === gameArray[0] && gameArray[cellIndex] === gameArray[1] && gameArray[cellIndex] === gameArray[2]) {
         $('#message').text(`You are the winner ${currentValue}`)
+        gameOver = true
+        $('.box').css('pointer-events', 'none') // => here is big problem
       } else if (
         gameArray[cellIndex] === gameArray[3] && gameArray[cellIndex] === gameArray[4] && gameArray[cellIndex] === gameArray[5]
       ) {
         $('#message').text(`You are the winner ${currentValue}`)
+        gameOver = true
+        $('.box').css('pointer-events', 'none')
       } else if (
         gameArray[cellIndex] === gameArray[6] && gameArray[cellIndex] === gameArray[7] && gameArray[cellIndex] === gameArray[8]
       ) {
         $('#message').text(`You are the winner ${currentValue}`)
+        gameOver = true
+        $('.box').css('pointer-events', 'none')
       } else if (
         gameArray[cellIndex] === gameArray[0] && gameArray[cellIndex] === gameArray[3] && gameArray[cellIndex] === gameArray[6]
       ) {
         $('#message').text(`You are the winner ${currentValue}`)
+        gameOver = true
+        $('.box').css('pointer-events', 'none')
       } else if (
         gameArray[cellIndex] === gameArray[1] && gameArray[cellIndex] === gameArray[4] && gameArray[cellIndex] === gameArray[7]
       ) {
         $('#message').text(`You are the winner ${currentValue}`)
+        gameOver = true
+        $('.box').css('pointer-events', 'none')
       } else if (
         gameArray[cellIndex] === gameArray[2] && gameArray[cellIndex] === gameArray[5] && gameArray[cellIndex] === gameArray[8]
       ) {
         $('#message').text(`You are the winner ${currentValue}`)
+        gameOver = true
+        $('.box').css('pointer-events', 'none')
       } else if (
         gameArray[cellIndex] === gameArray[0] && gameArray[cellIndex] === gameArray[4] && gameArray[cellIndex] === gameArray[8]
       ) {
         $('#message').text(`You are the winner ${currentValue}`)
+        gameOver = true
+        $('.box').css('pointer-events', 'none')
       } else if (
         gameArray[cellIndex] === gameArray[2] && gameArray[cellIndex] === gameArray[4] && gameArray[cellIndex] === gameArray[6]
       ) {
         $('#message').text(`You are the winner ${currentValue}`)
+        gameOver = true
+        $('.box').css('pointer-events', 'none')
       }
       let gameDraw = !gameArray.includes('')
       if (gameDraw) {
@@ -104,40 +120,22 @@ const onPlayTurn = function(event) {
           $('#message').text('Please start a new game!')
         })
         gameOver = true
-        return
       }
     }
 
     checkWinner(gameArray)
 
-    //later on move to ui for display winner
-    // $('#message').text(`Congratulations!!! ${currentPlayer} is the winner!`)
-    api.updateGame(cellIndex, currentValue)
+    api.updateGame(cellIndex, currentValue, gameOver)
       .then(ui.playTurnSuccess)
+      .then(() => checkWinner(store.game.cells))
       .catch(ui.playTurnFailed)
 
   } else {
     const userMove = 'You must select an empty space'
     $('#message').text(userMove)
+    $(playerTurn).off()
   }
-
-
 }
-
-// function checkWin starts here
-// make array for win conditions
-// compare game array with win conditions array
-
-const winCons = [
-  [0, 1, 2],
-  [3, 4, 5],
-  [6, 7, 8],
-  [0, 3, 6],
-  [1, 4, 7],
-  [2, 5, 8],
-  [0, 4, 8],
-  [2, 4, 6]
-]
 
 
 

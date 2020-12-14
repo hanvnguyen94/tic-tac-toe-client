@@ -2,7 +2,6 @@
 
 const store = require('./../store')
 
-
 const createGameSuccess = function(response) {
   console.log(response.game)
   $('.unauthenticated').hide()
@@ -16,7 +15,6 @@ const createGameSuccess = function(response) {
   //display the board
   $('.board').show()
 
-
   const gameMessage = (`
     <h3>Game Starts At X</h3>`)
 
@@ -24,10 +22,7 @@ const createGameSuccess = function(response) {
 
   // clear the board
   $('.box').empty()
-
 }
-
-
 const createGameFailure = function(error) {
   $('#message').text('Game create failed ' + error.responseJSON.message)
 }
