@@ -26,7 +26,7 @@ const signInSuccess = function(response) {
   $('.unauthenticated').hide()
   // show the authenticated options
   $('.authenticated').show()
-
+  $('#sign-out').show()
 
 }
 

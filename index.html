@@ -32,12 +32,16 @@
     </form>
   </div>
   <div class="authenticated">
-    <form id="change-password">
-      <input type="password" name="passwords[old]" placeholder="Old Password" required>
-      <input type="password" name="passwords[new]" placeholder="New Password" required>
-      <button type="submit">Change Password</button>
-      <button id="sign-out" type="submit">Sign Out</button>
-    </form>
+    <div id="container">
+      <form id="change-password">
+        <input type="password" name="passwords[old]" placeholder="Old Password" required>
+        <input type="password" name="passwords[new]" placeholder="New Password" required>
+        <button type="submit">Change Password</button>
+      </form>
+      <form id="sign-out">
+        <button type="button">Sign Out</button>
+      </form>
+    </div>
 
     <br>
 

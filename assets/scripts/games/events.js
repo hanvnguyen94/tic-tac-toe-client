@@ -8,7 +8,7 @@ const getFormFields = require('./../../../lib/get-form-fields')
 
 const onCreateGame = function(event) {
   event.preventDefault()
-  $('.authenticated').show()
+  $('#sign-out').show()
   // reset gameArray
   gameArray = ["", "", "", "", "", "", "", "", ""]
   gameOver = false
