@@ -46,7 +46,6 @@ const onPlayTurn = function (event) {
   const cellIndex = event.target.id
   // switch players here
   playerTurn()
-
   // function starts when click on any empty boxes
   if ($(event.target).text().length === 0) {
     $(event.target).text(currentPlayer)
@@ -120,6 +119,7 @@ const onPlayTurn = function (event) {
       .then(ui.playTurnSuccess)
       .catch(ui.playTurnFailed)
   } else {
+    playerTurn()
     $('#message').text('You must select an empty space!')
   }
 }

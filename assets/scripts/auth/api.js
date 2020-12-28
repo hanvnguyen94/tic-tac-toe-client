@@ -3,7 +3,7 @@
 const config = require('./../config')
 const store = require('./../store')
 
-const signUp = function(formData) {
+const signUp = function (formData) {
   return $.ajax({
     url: config.apiUrl + '/sign-up',
     method: 'POST',
@@ -11,7 +11,7 @@ const signUp = function(formData) {
   })
 }
 
-const signIn = function(formData) {
+const signIn = function (formData) {
   return $.ajax({
     url: config.apiUrl + '/sign-in',
     method: 'POST',
@@ -19,7 +19,7 @@ const signIn = function(formData) {
   })
 }
 
-const changePassword = function(formData) {
+const changePassword = function (formData) {
   return $.ajax({
     url: config.apiUrl + '/change-password',
     method: 'PATCH',
@@ -30,7 +30,7 @@ const changePassword = function(formData) {
   })
 }
 
-const signOut = function() {
+const signOut = function () {
   return $.ajax({
     url: config.apiUrl + '/sign-out',
     method: 'DELETE',

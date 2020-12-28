@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>retro tic-tac-toe</title>
+  <title>retro tic-tac-toe - play tic-tac-toe online for free</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Do not add `link` tags-->
@@ -16,6 +16,7 @@
 <body>
   <h1>Retro Tic-Tac-Toe</h1>
   <p class='copy-right'>Created by &copy;Han Ng</p>
+
   <p id="message"></p>
   <div class="unauthenticated">
     <form id="sign-up">
@@ -32,16 +33,23 @@
     </form>
   </div>
   <div class="authenticated">
-    <div id="container">
-      <form id="change-password">
+    <div class="navbar fixed-top navbar-dark bg-dark justify-content-end">
+      <!-- <a class="navbar-brand">Tic-Tac-Toe</a> -->
+      <form id="change-password" class="form-inline">
+        <input class="form-control mr-sm-2" type="password" name="passwords[old]" placeholder="Old Password" required>
+        <input class="form-control mr-sm-2" type="password" name="passwords[new]" placeholder="New Password" required>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Change Password</button>
+      </form>
+      <button id="sign-out" class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign Out</button>
+    </div>
+    <!-- <div id="container">
+      <form >
         <input type="password" name="passwords[old]" placeholder="Old Password" required>
         <input type="password" name="passwords[new]" placeholder="New Password" required>
         <button type="submit">Change Password</button>
       </form>
-      <form id="sign-out">
-        <button type="button">Sign Out</button>
-      </form>
-    </div>
+
+    </div> -->
 
     <br>
 

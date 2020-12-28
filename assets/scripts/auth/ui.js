@@ -1,6 +1,6 @@
 'use strict'
 
-const store = require("./../store")
+const store = require('./../store')
 
 $('.authenticated').hide()
 
@@ -14,47 +14,50 @@ const signUpSuccess = function (response) {
 // the ajax function's .catch
 // will pass this function an error object
 const signUpFailure = function (error) {
-  $('message').text('Sign Up Failed with error:: ' + error.message)
+  $('#message').text('Failed To Sign Up ', error)
+  $('form').trigger('reset')
 }
 
 const signInSuccess = function (response) {
   // save user information to use later on
   store.user = response.user
-  $('#message').text(`Welcome user ${store.user.email} to the page!`)
+  $('#message').text(`Welcome Back, ${store.user.email}!`)
+  $('.authenticated').show()
   $('.unauthenticated').hide()
   $('.container').hide()
   // show the authenticated options
-  $('.authenticated').show()
   $('#change-password').show()
   $('#sign-out').show()
 }
 
 const signInFailure = function (error) {
-  $('message').text('Error ' + error.responseJSON.message)
+  $('#message').text(error.responseJSON.message)
+  $('form').trigger('reset')
 }
 
 const changePasswordSuccess = function () {
-  $('#message').text('Successfully update new password!')
+  $('#message').text('Updated New Password')
   $('form').trigger('reset')
 }
 
 const changePasswordFailure = function (error) {
-  $('#message').text('Failed to change password with error ' + error.responseJSON.message)
+  $('#message').text('Failed to change password ' + error.responseJSON.message)
+  $('form').trigger('reset')
 }
 
 const signOutSuccess = function () {
-  $('#message').text('Successfully Signed Out!')
+  $('#message').text('Sign In To Start A New Game!')
 
   $('.authenticated').hide()
   $('.unauthenticated').show()
   // VERY IMPORTANT => unstore the user information
   store.user = null
-
   $('form').trigger('reset')
 }
 
 const signOutFailure = function (error) {
-  $('#message').text('Failed Sign Out with error ' + error.responseJSON.message)
+  $('#message').text('Failed Sign Out ' + error.responseJSON.message)
+  $('form').trigger('reset')
 }
 
 module.exports = {
