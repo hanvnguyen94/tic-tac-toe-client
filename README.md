@@ -21,8 +21,8 @@ During my development process, I encountered some problems and I always solved t
 - After that, I will review my lessons in class, along with using Google to search and read about similar problems to solve my own problems.
 
 ## Important Link
-![Game Project API](https://git.generalassemb.ly/ga-wdi-boston/game-project-api)
-![Deployed Client](https://hanvnguyen94.github.io/tic-tac-toe-client/)
+- [Game Project API](https://git.generalassemb.ly/ga-wdi-boston/game-project-api)
+- [Deployed Client](https://hanvnguyen94.github.io/tic-tac-toe-client/)
 
 ## User Stories
 - As a new user I want to sign up new account
