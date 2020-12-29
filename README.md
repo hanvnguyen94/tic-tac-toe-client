@@ -11,11 +11,11 @@ This application allows user to play Tic-Tac-Toe against themself. I created thi
 - Bootstrap 4
 - Javascript
 
-##Unsolved Problems
+## Unsolved Problems
 - Still need to work on mobile responsive
 - Still need to work on styling
 - Would like to eventually make another mode for user to play against computer
 
-#Wireframe:
-![laptop's wirefram](https://user-images.githubusercontent.com/73920080/101420857-11002d80-38c1-11eb-9a2f-b53f8a65121d.png)
+# Wireframe:
 ![tic tac toe mobile-board](https://user-images.githubusercontent.com/73920080/103297987-711d5780-49c7-11eb-9e0f-098e36056b5a.png)
+![laptop's wirefram](https://user-images.githubusercontent.com/73920080/101420857-11002d80-38c1-11eb-9a2f-b53f8a65121d.png)
