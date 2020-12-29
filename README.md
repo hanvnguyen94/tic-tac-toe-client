@@ -15,9 +15,14 @@ I created this project followed logic steps below:
 - View Total Games
 - Final Touches
 
+During my development process, I encountered some problems and I always solved them logically based on my preference steps:
+- First of all, I made a detail to-do list to keep all the tasks on track.
+- I started to write and illustrate the workflow and all the problems I am facing to verify where the bug occurs.
+- After that, I will review my lessons in class, along with using Google to search and read about similar problems to solve my own problems.
+
 ## Important Link
-[Game Project API](https://git.generalassemb.ly/ga-wdi-boston/game-project-api)
-[Deployed Client](https://hanvnguyen94.github.io/tic-tac-toe-client/)
+![Game Project API](https://git.generalassemb.ly/ga-wdi-boston/game-project-api)
+![Deployed Client](https://hanvnguyen94.github.io/tic-tac-toe-client/)
 
 ## User Stories
 - As a new user I want to sign up new account
