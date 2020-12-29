@@ -15,7 +15,6 @@ const onCreateGame = function (event) {
   $('.box').css('pointer-events', 'auto')
   $('.box').html('')
   $('.container').show()
-  $('#games-display').empty()
 
   api.createGame()
     .then(ui.createGameSuccess)
@@ -56,50 +55,50 @@ const onPlayTurn = function (event) {
     // check winner here
     const checkWinner = function () {
       if (gameArray[cellIndex] === gameArray[0] && gameArray[cellIndex] === gameArray[1] && gameArray[cellIndex] === gameArray[2]) {
-        $('#message').text(`${currentValue} is the winner!`)
+        $('#message').text(`Congratulations! ${currentValue} is the winner`)
         gameOver = true
         // disable all the click after determined winner
         $('.box').css('pointer-events', 'none') // => stack over flow saved my life
       } else if (
         gameArray[cellIndex] === gameArray[3] && gameArray[cellIndex] === gameArray[4] && gameArray[cellIndex] === gameArray[5]
       ) {
-        $('#message').text(`${currentValue} is the winner!`)
+        $('#message').text(`Congratulations! ${currentValue} is the winner`)
         gameOver = true
         $('.box').css('pointer-events', 'none')
       } else if (
         gameArray[cellIndex] === gameArray[6] && gameArray[cellIndex] === gameArray[7] && gameArray[cellIndex] === gameArray[8]
       ) {
-        $('#message').text(`${currentValue} is the winner!`)
+        $('#message').text(`Congratulations! ${currentValue} is the winner`)
         gameOver = true
         $('.box').css('pointer-events', 'none')
       } else if (
         gameArray[cellIndex] === gameArray[0] && gameArray[cellIndex] === gameArray[3] && gameArray[cellIndex] === gameArray[6]
       ) {
-        $('#message').text(`${currentValue} is the winner!`)
+        $('#message').text(`Congratulations! ${currentValue} is the winner`)
         gameOver = true
         $('.box').css('pointer-events', 'none')
       } else if (
         gameArray[cellIndex] === gameArray[1] && gameArray[cellIndex] === gameArray[4] && gameArray[cellIndex] === gameArray[7]
       ) {
-        $('#message').text(`${currentValue} is the winner!`)
+        $('#message').text(`Congratulations! ${currentValue} is the winner`)
         gameOver = true
         $('.box').css('pointer-events', 'none')
       } else if (
         gameArray[cellIndex] === gameArray[2] && gameArray[cellIndex] === gameArray[5] && gameArray[cellIndex] === gameArray[8]
       ) {
-        $('#message').text(`${currentValue} is the winner!`)
+        $('#message').text(`Congratulations! ${currentValue} is the winner`)
         gameOver = true
         $('.box').css('pointer-events', 'none')
       } else if (
         gameArray[cellIndex] === gameArray[0] && gameArray[cellIndex] === gameArray[4] && gameArray[cellIndex] === gameArray[8]
       ) {
-        $('#message').text(`${currentValue} is the winner!`)
+        $('#message').text(`Congratulations! ${currentValue} is the winner`)
         gameOver = true
         $('.box').css('pointer-events', 'none')
       } else if (
         gameArray[cellIndex] === gameArray[2] && gameArray[cellIndex] === gameArray[4] && gameArray[cellIndex] === gameArray[6]
       ) {
-        $('#message').text(`${currentValue} is the winner!`)
+        $('#message').text(`Congratulations! ${currentValue} is the winner`)
         gameOver = true
         $('.box').css('pointer-events', 'none')
       }

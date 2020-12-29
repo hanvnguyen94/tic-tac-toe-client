@@ -14,11 +14,6 @@ const createGameSuccess = function (response) {
   // display the board
   $('.container').show()
   $('#sign-out').show()
-  // const gameMessage = (`
-  //   <h3>Game Starts As X</h3>`)
-  //
-  // $('#message').html(gameMessage)
-
   // clear the board
   $('.box').empty()
 }
@@ -39,7 +34,7 @@ const playTurnFailed = function (error) {
 
 const showGamesSuccess = function (response) {
   const games = response.games
-  $('#message').text(`Total games ${store.user.email} have played: ${games.length} games`)
+  $('#message').text(`${store.user.email} have played: ${games.length} games`)
   $('.container').hide()
 }
 
