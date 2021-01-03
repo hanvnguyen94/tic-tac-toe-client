@@ -109,6 +109,7 @@ const onPlayTurn = function (event) {
         $('.box').on('click', function () {
           gameOver = true
         })
+        $('.box').css('pointer-events', 'none')
       }
     }
 
